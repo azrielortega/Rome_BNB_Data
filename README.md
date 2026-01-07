@@ -1,4 +1,4 @@
-# 🏛️The Roman Empire of Airbnb: A Spatial Analysis
+# 🏛️The Roman Empire of Airbnb
 An in-depth exploration of Rome's short-term rental market, price distributions, and geographic density.
 
 ## Project Overview
