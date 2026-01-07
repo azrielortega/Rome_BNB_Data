@@ -1,0 +1,1181 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20253.25.1210.1815                               -->
+<workbook original-version='18.1' source-build='2025.3.1 (20253.25.1210.1815)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <Heatmap />
+    <Layers />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <ParameterAction />
+    <ParameterActionClearSelection />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SpatialFileLayer />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='ColorCenter' datatype='real' name='[ColorCenter]' param-domain-type='any' role='measure' type='quantitative' value='94.0'>
+        <calculation class='tableau' formula='94.0' />
+      </column>
+      <column caption='ColorEnd' datatype='real' name='[ColorEnd]' param-domain-type='any' role='measure' type='quantitative' value='200.0'>
+        <calculation class='tableau' formula='200.0' />
+      </column>
+    </datasource>
+    <datasource caption='rome_airbnb_clean.csv+ (Multiple Connections)' inline='true' name='federated.1hhdyk81e3d68c12myy5z1d52evr' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='rome_airbnb_clean' name='textscan.0xcoh9b13wcx8v1fukoxn0gmk3kb'>
+            <connection class='textscan' directory='//wsl.localhost/Ubuntu/home/matthew/code/notebooks/data_man_vis/Rome_BNB_Data' filename='rome_airbnb_clean.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='neighbourhoods' name='ogrdirect.03jpprs0uzfhq31ak62iw16w4fjw'>
+            <connection class='ogrdirect' directory='//wsl.localhost/Ubuntu/home/matthew/code/notebooks/data_man_vis/Rome_BNB_Data' filename='neighbourhoods.geojson' password='' server='' tablename='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.0xcoh9b13wcx8v1fukoxn0gmk3kb' name='rome_airbnb_clean.csv' table='[rome_airbnb_clean#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='id' ordinal='0' />
+              <column datatype='string' name='name' ordinal='1' />
+              <column datatype='integer' name='host_id' ordinal='2' />
+              <column datatype='string' name='host_name' ordinal='3' />
+              <column datatype='string' name='neighbourhood_group' ordinal='4' />
+              <column datatype='string' name='neighbourhood' ordinal='5' />
+              <column datatype='real' name='latitude' ordinal='6' />
+              <column datatype='real' name='longitude' ordinal='7' />
+              <column datatype='string' name='room_type' ordinal='8' />
+              <column datatype='real' name='price' ordinal='9' />
+              <column datatype='integer' name='minimum_nights' ordinal='10' />
+              <column datatype='integer' name='number_of_reviews' ordinal='11' />
+              <column datatype='date' name='last_review' ordinal='12' />
+              <column datatype='real' name='reviews_per_month' ordinal='13' />
+              <column datatype='integer' name='calculated_host_listings_count' ordinal='14' />
+              <column datatype='integer' name='availability_365' ordinal='15' />
+              <column datatype='integer' name='number_of_reviews_ltm' ordinal='16' />
+              <column datatype='string' name='license' ordinal='17' />
+              <column datatype='boolean' name='is_short_term' ordinal='18' />
+              <column datatype='string' name='renter_type' ordinal='19' />
+            </columns>
+          </relation>
+          <relation connection='ogrdirect.03jpprs0uzfhq31ak62iw16w4fjw' name='neighbourhoods.geojson' table='[neighbourhoods.geojson]' type='table'>
+            <columns>
+              <column datatype='string' name='neighbourhood' ordinal='0' />
+              <column datatype='string' name='neighbourhood_group' ordinal='1' />
+              <column datatype='spatial' name='Geometry' ordinal='2' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Geometry]' value='[neighbourhoods.geojson].[Geometry]' />
+          <map key='[availability_365]' value='[rome_airbnb_clean.csv].[availability_365]' />
+          <map key='[calculated_host_listings_count]' value='[rome_airbnb_clean.csv].[calculated_host_listings_count]' />
+          <map key='[host_id]' value='[rome_airbnb_clean.csv].[host_id]' />
+          <map key='[host_name]' value='[rome_airbnb_clean.csv].[host_name]' />
+          <map key='[id]' value='[rome_airbnb_clean.csv].[id]' />
+          <map key='[is_short_term]' value='[rome_airbnb_clean.csv].[is_short_term]' />
+          <map key='[last_review]' value='[rome_airbnb_clean.csv].[last_review]' />
+          <map key='[latitude]' value='[rome_airbnb_clean.csv].[latitude]' />
+          <map key='[license]' value='[rome_airbnb_clean.csv].[license]' />
+          <map key='[longitude]' value='[rome_airbnb_clean.csv].[longitude]' />
+          <map key='[minimum_nights]' value='[rome_airbnb_clean.csv].[minimum_nights]' />
+          <map key='[name]' value='[rome_airbnb_clean.csv].[name]' />
+          <map key='[neighbourhood (neighbourhoods.geojson)]' value='[neighbourhoods.geojson].[neighbourhood]' />
+          <map key='[neighbourhood]' value='[rome_airbnb_clean.csv].[neighbourhood]' />
+          <map key='[neighbourhood_group (neighbourhoods.geojson)]' value='[neighbourhoods.geojson].[neighbourhood_group]' />
+          <map key='[neighbourhood_group]' value='[rome_airbnb_clean.csv].[neighbourhood_group]' />
+          <map key='[number_of_reviews]' value='[rome_airbnb_clean.csv].[number_of_reviews]' />
+          <map key='[number_of_reviews_ltm]' value='[rome_airbnb_clean.csv].[number_of_reviews_ltm]' />
+          <map key='[price]' value='[rome_airbnb_clean.csv].[price]' />
+          <map key='[renter_type]' value='[rome_airbnb_clean.csv].[renter_type]' />
+          <map key='[reviews_per_month]' value='[rome_airbnb_clean.csv].[reviews_per_month]' />
+          <map key='[room_type]' value='[rome_airbnb_clean.csv].[room_type]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>host_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[host_id]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>host_id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>host_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[host_name]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>host_name</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>neighbourhood_group</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[neighbourhood_group]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>neighbourhood_group</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>neighbourhood</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[neighbourhood]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>neighbourhood</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>latitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[latitude]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>latitude</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>longitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[longitude]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>longitude</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>room_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[room_type]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>room_type</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[price]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>price</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>minimum_nights</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[minimum_nights]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>minimum_nights</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number_of_reviews</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number_of_reviews]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>number_of_reviews</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>last_review</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[last_review]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>last_review</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reviews_per_month</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[reviews_per_month]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>reviews_per_month</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>calculated_host_listings_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[calculated_host_listings_count]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>calculated_host_listings_count</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>availability_365</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[availability_365]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>availability_365</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number_of_reviews_ltm</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number_of_reviews_ltm]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>number_of_reviews_ltm</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>license</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[license]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>license</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_short_term</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_short_term]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>is_short_term</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>renter_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[renter_type]</local-name>
+            <parent-name>[rome_airbnb_clean.csv]</parent-name>
+            <remote-alias>renter_type</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>neighbourhood</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[neighbourhood (neighbourhoods.geojson)]</local-name>
+            <parent-name>[neighbourhoods.geojson]</parent-name>
+            <remote-alias>neighbourhood</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>neighbourhood_group</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[neighbourhood_group (neighbourhoods.geojson)]</local-name>
+            <parent-name>[neighbourhoods.geojson]</parent-name>
+            <remote-alias>neighbourhood_group</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[neighbourhoods.geojson]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Median Price' datatype='real' name='[Calculation_0771057834131457]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{FIXED [neighbourhood (neighbourhoods.geojson)] : MEDIAN([price])}' />
+      </column>
+      <column caption='Number of Listings' datatype='integer' name='[Calculation_0771057835659266]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{FIXED [neighbourhood (neighbourhoods.geojson)] : COUNT([id])}' />
+      </column>
+      <column caption='neighbourhoods.geojson' datatype='table' name='[__tableau_internal_object_id__].[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41]' role='measure' type='quantitative' />
+      <column caption='rome_airbnb_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]' role='measure' type='quantitative' />
+      <column caption='Availability 365' datatype='integer' name='[availability_365]' role='measure' type='quantitative' />
+      <column caption='Calculated Host Listings Count' datatype='integer' name='[calculated_host_listings_count]' role='measure' type='quantitative' />
+      <column caption='Host Id' datatype='integer' name='[host_id]' role='dimension' type='ordinal' />
+      <column caption='Host Name' datatype='string' name='[host_name]' role='dimension' type='nominal' />
+      <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
+      <column caption='Is Short Term' datatype='boolean' name='[is_short_term]' role='dimension' type='nominal' />
+      <column caption='Last Review' datatype='date' name='[last_review]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' caption='Latitude' datatype='real' name='[latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column caption='License' datatype='string' name='[license]' role='dimension' type='nominal' />
+      <column aggregation='Avg' caption='Longitude' datatype='real' name='[longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Minimum Nights' datatype='integer' name='[minimum_nights]' role='measure' type='quantitative' />
+      <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal' />
+      <column caption='Neighbourhood (Neighbourhoods.Geojson)' datatype='string' name='[neighbourhood (neighbourhoods.geojson)]' role='dimension' type='nominal' />
+      <column caption='Neighbourhood' datatype='string' name='[neighbourhood]' role='dimension' type='nominal' />
+      <column caption='Neighbourhood Group (Neighbourhoods.Geojson)' datatype='string' name='[neighbourhood_group (neighbourhoods.geojson)]' role='dimension' type='nominal' />
+      <column caption='Neighbourhood Group' datatype='string' name='[neighbourhood_group]' role='dimension' type='nominal' />
+      <column caption='Number Of Reviews' datatype='integer' name='[number_of_reviews]' role='measure' type='quantitative' />
+      <column caption='Number Of Reviews Ltm' datatype='integer' name='[number_of_reviews_ltm]' role='measure' type='quantitative' />
+      <column caption='Price' datatype='real' name='[price]' role='measure' type='quantitative' />
+      <column caption='Renter Type' datatype='string' name='[renter_type]' role='dimension' type='nominal' />
+      <column caption='Reviews Per Month' datatype='real' name='[reviews_per_month]' role='dimension' type='quantitative' />
+      <column caption='Room Type' datatype='string' name='[room_type]' role='dimension' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/Matthew/AppData/Local/Temp/TableauTemp/#TableauTemp_1pv4ewf1ow9fd1166pvs50zpmmw3.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='01/07/2026 10:34:34 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8' table='[Extract].[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]' type='table' />
+            <relation name='neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41' table='[Extract].[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41]' type='table' />
+          </relation>
+          <cols>
+            <map key='[Geometry]' value='[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41].[Geometry]' />
+            <map key='[availability_365]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[availability_365]' />
+            <map key='[calculated_host_listings_count]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[calculated_host_listings_count]' />
+            <map key='[host_id]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[host_id]' />
+            <map key='[host_name]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[host_name]' />
+            <map key='[id]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[id]' />
+            <map key='[is_short_term]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[is_short_term]' />
+            <map key='[last_review]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[last_review]' />
+            <map key='[latitude]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[latitude]' />
+            <map key='[license]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[license]' />
+            <map key='[longitude]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[longitude]' />
+            <map key='[minimum_nights]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[minimum_nights]' />
+            <map key='[name]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[name]' />
+            <map key='[neighbourhood (neighbourhoods.geojson)]' value='[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41].[neighbourhood]' />
+            <map key='[neighbourhood]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[neighbourhood]' />
+            <map key='[neighbourhood_group (neighbourhoods.geojson)]' value='[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41].[neighbourhood_group]' />
+            <map key='[neighbourhood_group]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[neighbourhood_group]' />
+            <map key='[number_of_reviews]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[number_of_reviews]' />
+            <map key='[number_of_reviews_ltm]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[number_of_reviews_ltm]' />
+            <map key='[price]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[price]' />
+            <map key='[renter_type]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[renter_type]' />
+            <map key='[reviews_per_month]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[reviews_per_month]' />
+            <map key='[room_type]' value='[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8].[room_type]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[id]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>35238</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[name]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>name</remote-alias>
+              <ordinal>1</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>28426</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>host_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[host_id]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>host_id</remote-alias>
+              <ordinal>2</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9446</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>host_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[host_name]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>host_name</remote-alias>
+              <ordinal>3</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2052</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>neighbourhood_group</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[neighbourhood_group]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>neighbourhood_group</remote-alias>
+              <ordinal>4</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>neighbourhood</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[neighbourhood]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>neighbourhood</remote-alias>
+              <ordinal>5</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>15</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>latitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[latitude]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>latitude</remote-alias>
+              <ordinal>6</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12665</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>longitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[longitude]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>longitude</remote-alias>
+              <ordinal>7</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>14353</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>room_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[room_type]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>room_type</remote-alias>
+              <ordinal>8</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>price</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[price]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>price</remote-alias>
+              <ordinal>9</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>923</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>minimum_nights</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[minimum_nights]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>minimum_nights</remote-alias>
+              <ordinal>10</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>40</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>number_of_reviews</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[number_of_reviews]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>number_of_reviews</remote-alias>
+              <ordinal>11</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>801</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>last_review</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[last_review]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>last_review</remote-alias>
+              <ordinal>12</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>1092</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>reviews_per_month</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[reviews_per_month]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>reviews_per_month</remote-alias>
+              <ordinal>13</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1215</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>calculated_host_listings_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[calculated_host_listings_count]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>calculated_host_listings_count</remote-alias>
+              <ordinal>14</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>111</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>availability_365</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[availability_365]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>availability_365</remote-alias>
+              <ordinal>15</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>741</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>number_of_reviews_ltm</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[number_of_reviews_ltm]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>number_of_reviews_ltm</remote-alias>
+              <ordinal>16</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>138</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>license</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[license]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>license</remote-alias>
+              <ordinal>17</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>15999</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_short_term</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[is_short_term]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>is_short_term</remote-alias>
+              <ordinal>18</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>renter_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[renter_type]</local-name>
+              <parent-name>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</parent-name>
+              <remote-alias>renter_type</remote-alias>
+              <ordinal>19</ordinal>
+              <family>rome_airbnb_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>neighbourhood</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[neighbourhood (neighbourhoods.geojson)]</local-name>
+              <parent-name>[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41]</parent-name>
+              <remote-alias>neighbourhood</remote-alias>
+              <ordinal>20</ordinal>
+              <family>neighbourhoods.geojson</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>15</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>neighbourhood_group</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[neighbourhood_group (neighbourhoods.geojson)]</local-name>
+              <parent-name>[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41]</parent-name>
+              <remote-alias>neighbourhood_group</remote-alias>
+              <ordinal>21</ordinal>
+              <family>neighbourhoods.geojson</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry]</local-name>
+              <parent-name>[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41]</parent-name>
+              <remote-alias>Geometry</remote-alias>
+              <ordinal>22</ordinal>
+              <family>neighbourhoods.geojson</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>15</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Philippines&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='neighbourhoods.geojson' id='neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41'>
+            <properties context=''>
+              <relation connection='ogrdirect.03jpprs0uzfhq31ak62iw16w4fjw' name='neighbourhoods.geojson' table='[neighbourhoods.geojson]' type='table'>
+                <columns>
+                  <column datatype='string' name='neighbourhood' ordinal='0' />
+                  <column datatype='string' name='neighbourhood_group' ordinal='1' />
+                  <column datatype='spatial' name='Geometry' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41' table='[Extract].[neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41]' type='table' />
+            </properties>
+          </object>
+          <object caption='rome_airbnb_clean.csv' id='rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8'>
+            <properties context=''>
+              <relation connection='textscan.0xcoh9b13wcx8v1fukoxn0gmk3kb' name='rome_airbnb_clean.csv' table='[rome_airbnb_clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='id' ordinal='0' />
+                  <column datatype='string' name='name' ordinal='1' />
+                  <column datatype='integer' name='host_id' ordinal='2' />
+                  <column datatype='string' name='host_name' ordinal='3' />
+                  <column datatype='string' name='neighbourhood_group' ordinal='4' />
+                  <column datatype='string' name='neighbourhood' ordinal='5' />
+                  <column datatype='real' name='latitude' ordinal='6' />
+                  <column datatype='real' name='longitude' ordinal='7' />
+                  <column datatype='string' name='room_type' ordinal='8' />
+                  <column datatype='real' name='price' ordinal='9' />
+                  <column datatype='integer' name='minimum_nights' ordinal='10' />
+                  <column datatype='integer' name='number_of_reviews' ordinal='11' />
+                  <column datatype='date' name='last_review' ordinal='12' />
+                  <column datatype='real' name='reviews_per_month' ordinal='13' />
+                  <column datatype='integer' name='calculated_host_listings_count' ordinal='14' />
+                  <column datatype='integer' name='availability_365' ordinal='15' />
+                  <column datatype='integer' name='number_of_reviews_ltm' ordinal='16' />
+                  <column datatype='string' name='license' ordinal='17' />
+                  <column datatype='boolean' name='is_short_term' ordinal='18' />
+                  <column datatype='string' name='renter_type' ordinal='19' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8' table='[Extract].[rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[neighbourhood]' />
+              <expression op='[neighbourhood (neighbourhoods.geojson)]' />
+            </expression>
+            <first-end-point object-id='rome_airbnb_clean.csv_CC05DA35FAC34B62983C563B4F28CEC8' />
+            <second-end-point object-id='neighbourhoods.geojson_842FFDE1B47245659F6315AC6B73BC41' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <actions>
+    <edit-parameter-action caption='ParameterColorCenter1' name='[Action1_57C9B79C4AE54ED88CA23044AAC9C41E]'>
+      <activation type='on-select' />
+      <source type='sheet' worksheet='Sheet 2' />
+      <agg-type type='median' />
+      <clear-option type='do-nothing' value='i:1' />
+      <params>
+        <param name='source-field' value='[federated.1hhdyk81e3d68c12myy5z1d52evr].[med:price:qk]' />
+        <param name='target-parameter' value='[Parameters].[ColorCenter]' />
+      </params>
+    </edit-parameter-action>
+    <edit-parameter-action caption='ParameterColorEnd1' name='[Action2_B6775741EB23478FB8771FED3F7E3443]'>
+      <activation type='on-select' />
+      <source type='sheet' worksheet='Sheet 2' />
+      <agg-type type='max' />
+      <clear-option type='do-nothing' value='i:1' />
+      <params>
+        <param name='source-field' value='[federated.1hhdyk81e3d68c12myy5z1d52evr].[med:price:qk]' />
+        <param name='target-parameter' value='[Parameters].[ColorEnd]' />
+      </params>
+    </edit-parameter-action>
+  </actions>
+  <worksheets>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>AirBnb Market Hotspots: Popularity vs Pricing</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='rome_airbnb_clean.csv+ (Multiple Connections)' name='federated.1hhdyk81e3d68c12myy5z1d52evr' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1hhdyk81e3d68c12myy5z1d52evr'>
+            <column caption='Median Price' datatype='real' name='[Calculation_0771057834131457]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{FIXED [neighbourhood (neighbourhoods.geojson)] : MEDIAN([price])}' />
+            </column>
+            <column caption='Number of Listings' datatype='integer' name='[Calculation_0771057835659266]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{FIXED [neighbourhood (neighbourhoods.geojson)] : COUNT([id])}' />
+            </column>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' caption='Latitude' datatype='real' name='[latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Longitude' datatype='real' name='[longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column-instance column='[price]' derivation='Median' name='[med:price:qk]' pivot='key' type='quantitative' />
+            <column caption='Neighbourhood (Neighbourhoods.Geojson)' datatype='string' name='[neighbourhood (neighbourhoods.geojson)]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_0771057834131457]' derivation='None' name='[none:Calculation_0771057834131457:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0771057835659266]' derivation='None' name='[none:Calculation_0771057835659266:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[id]' derivation='None' name='[none:id:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[latitude]' derivation='None' name='[none:latitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[longitude]' derivation='None' name='[none:longitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[neighbourhood (neighbourhoods.geojson)]' derivation='None' name='[none:neighbourhood (neighbourhoods.geojson):nk]' pivot='key' type='nominal' />
+            <column-instance column='[price]' derivation='None' name='[none:price:qk]' pivot='key' type='quantitative' />
+            <column caption='Price' datatype='real' name='[price]' role='measure' type='quantitative' />
+            <column-instance column='[price]' derivation='Sum' name='[sum:price:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:price:qk]' included-values='in-range'>
+            <min>60.0</min>
+            <max>170.0</max>
+          </filter>
+          <slices>
+            <column>[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:price:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:longitude:qk]' field-type='quantitative' max='1446445.7871517551' min='1337160.0457587868' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:latitude:qk]' field-type='quantitative' max='5184138.5531724375' min='5106879.9939578874' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1hhdyk81e3d68c12myy5z1d52evr].[med:price:qk]' max='170.0' min='60.0' palette='red_blue_diverging_10_0' type='interpolated' />
+            <encoding attr='color' field='[federated.1hhdyk81e3d68c12myy5z1d52evr].[sum:price:qk]' max='170.0' min='60.0' palette='green_gold_10_0' type='interpolated' />
+            <encoding attr='color' field='[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:price:qk]' max='170.0' min='60.0' palette='red_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.1hhdyk81e3d68c12myy5z1d52evr].[med:price:qk]' value='Listing Price (Euro)'>
+              <formatted-text>
+                <run>Listing Price (Euro)</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes customization-axis='layer'>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' title='Neighbourhood borders'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Multipolygon' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:neighbourhood (neighbourhoods.geojson):nk]' />
+              <lod column='[federated.1hhdyk81e3d68c12myy5z1d52evr].[clct:Geometry:nk]' />
+              <lod column='[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:Calculation_0771057834131457:qk]' />
+              <lod column='[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:Calculation_0771057835659266:qk]' />
+              <geometry column='[federated.1hhdyk81e3d68c12myy5z1d52evr].[clct:Geometry:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#898989'>Median Price:&#9;</run>
+                <run bold='true' fontcolor='#000000'><![CDATA[<[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:Calculation_0771057834131457:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#898989'>Neighbourhood:&#9;</run>
+                <run bold='true' fontcolor='#000000'><![CDATA[<[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:neighbourhood (neighbourhoods.geojson):nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#898989'>Number of Listings:</run>
+                <run bold='true' fontcolor='#898989'>Æ </run>
+                <run bold='true' fontcolor='#000000'><![CDATA[ <[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:Calculation_0771057835659266:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#f5f5f5' />
+                <format attr='size' value='0.0099999997764825821' />
+                <format attr='mark-transparency' value='129' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#d4d4d4' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='0' selection-relaxation-option='selection-relaxation-allow' title='Popularity'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Heatmap' />
+            <encodings>
+              <lod column='[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:id:ok]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text />
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <encoding attr='density-color' palette='gray_10_0' type='interpolated' />
+                <format attr='density-intensity' value='0.98391342163085938' />
+                <format attr='mark-transparency' value='255' />
+                <format attr='density-kernel-size' value='2.1546962261199951' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' title='Price'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1hhdyk81e3d68c12myy5z1d52evr].[med:price:qk]' />
+              <size column='[federated.1hhdyk81e3d68c12myy5z1d52evr].[sum:price:qk]' />
+              <lod column='[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:latitude:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Latitude:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:latitude:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Longitude:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:longitude:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Listing Price:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1hhdyk81e3d68c12myy5z1d52evr].[med:price:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-transparency' value='255' />
+                <format attr='size' value='0.51574587821960449' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:latitude:qk]</rows>
+        <cols>[federated.1hhdyk81e3d68c12myy5z1d52evr].[none:longitude:qk]</cols>
+      </table>
+      <simple-id uuid='{9E58CC70-DA92-4296-A0E1-128EF3B989A1}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='900' maxwidth='1600' minheight='560' minwidth='420' sizing-mode='range' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98222' id='10' param='vert' type-v2='layout-flow' w='98816' x='592' y='889'>
+            <zone h='98222' id='7' param='horz' type-v2='layout-flow' w='98816' x='592' y='889'>
+              <zone h='98222' id='5' type-v2='layout-basic' w='86982' x='592' y='889'>
+                <zone h='98222' id='3' name='Sheet 2' w='86982' x='592' y='889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone fixed-size='160' h='98222' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='11834' x='87574' y='889'>
+                <zone h='8111' id='8' name='Sheet 2' pane-specification-id='2' param='[federated.1hhdyk81e3d68c12myy5z1d52evr].[med:price:qk]' type-v2='color' w='11834' x='87574' y='889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='1' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{F900E752-5093-4BF4-A5FC-04D4CFC7574D}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.1hhdyk81e3d68c12myy5z1d52evr].[med:price:qk]' type='color' />
+            <card pane-specification-id='2' param='[federated.1hhdyk81e3d68c12myy5z1d52evr].[sum:price:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{EB702405-1A97-461A-952C-02C28F7AC2F5}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 2'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{A23BFBC8-D2BE-40E8-A73B-D156D9B09298}' />
+    </window>
+  </windows>
+</workbook>
